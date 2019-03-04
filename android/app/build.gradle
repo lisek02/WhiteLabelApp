@@ -117,6 +117,21 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+        redVariant {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            applicationIdSuffix ".red"
+        }
+        blueVariant {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            applicationIdSuffix ".blue"
+        }
+        defaultVariant {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            applicationIdSuffix ".default"
+        }
     }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
