@@ -97,6 +97,8 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    flavorDimensions "default"
+
     defaultConfig {
         applicationId "com.whitelabelapp"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -117,17 +119,25 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
-        redVariant {
-            applicationIdSuffix ".red"
-            debuggable true
+    }
+    productFlavors {
+        regular {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.whitelabelapp.regular"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.myapp"
         }
-        blueVariant {
-            applicationIdSuffix ".blue"
-            debuggable true
+        blue {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.whitelabelapp.blue"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.myapp"
         }
-        defaultVariant {
-            applicationIdSuffix ".default"
-            debuggable true
+        red {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.whitelabelapp.red"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.myapp"
         }
     }
     // applicationVariants are e.g. debug, release

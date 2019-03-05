@@ -8,9 +8,9 @@
     "copy:dev": "cp src/environments/environment.default.js src/environments/index.js",
     "copy:dev:blue": "cp src/environments/environment.blue.js src/environments/index.js",
     "copy:dev:red": "cp src/environments/environment.red.js src/environments/index.js",
-    "start:dev": "npm run copy:dev && react-native run-android",
-    "start:dev:blue": "npm run copy:dev:blue && react-native run-android",
-    "start:dev:red": "npm run copy:dev:red && react-native run-android"
+    "start:dev": "npm run copy:dev && react-native run-android --variant=regularDebug",
+    "start:dev:blue": "npm run copy:dev:blue && react-native run-android --variant=blueDebug",
+    "start:dev:red": "npm run copy:dev:red && react-native run-android --variant=redDebug"
   },
   "dependencies": {
     "react": "16.6.3",
